@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🧠 Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <h1>🎓 QuizMaster</h1>
+    <p>Loading...</p>
+  </div>
+
+  <div class="container">
+    <h1 id="main-heading">🧠 Welcome to the Quiz App!</h1>
+
+    <!-- Dark Mode Toggle -->
+    <div id="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="dark-mode-toggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="start-screen">
+      <input type="text" id="username" placeholder="Enter your name" />
+      <select id="category">
+        <option value="">--Select Category--</option>
+        <option value="general">🧠 General Knowledge</option>
+        <option value="science">🔬 Science</option>
+        <option value="sports">⚽ Sports</option>
+      </select>
+      <select id="difficulty">
+        <option value="">--Select Difficulty--</option>
+        <option value="easy">🟢 Easy</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="hard">🔴 Hard</option>
+      </select>
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Box -->
+    <div id="quiz-box" class="hidden fade">
+      <div id="timer">15</div>
+      <h2 id="question-text"></h2>
+      <ul id="option-list"></ul>
+      <button id="next-btn" class="hidden" onclick="nextQuestion()">Next</button>
+      <div class="progress-bar"><div id="progress" class="progress"></div></div>
+    </div>
+
+    <!-- Result Box -->
+    <div id="result-box" class="hidden fade">
+      <h2>🎉 Quiz Completed</h2>
+      <p id="score-text"></p>
+      <p id="highscore-text"></p>
+      <button onclick="restartQuiz()">Restart</button>
+    </div>
+
+    <!-- Review Mode -->
+    <div id="review-box" class="hidden fade">
+      <h2>📋 Review Your Answers</h2>
+      <ul id="review-list"></ul>
+      <button onclick="restartQuiz()">Try Again</button>
+    </div>
+
+    <!-- Leaderboard -->
+    <div id="leaderboard" class="hidden">
+      <h2>🏆 Leaderboard</h2>
+      <ul id="leaderboard-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
